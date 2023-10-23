@@ -19,6 +19,8 @@ export const WorkoutForm = () => {
       return;
     }
 
+    console.log(user);
+
     const workout = { title, load, reps}
     const response = await fetch('/api/workouts', {
       method: 'POST',
@@ -49,7 +51,7 @@ export const WorkoutForm = () => {
         <div><input placeholder="load" type='text' onChange={(e) => setLoad(e.target.value)} value={load} /></div>
         <div><input placeholder="reps" type='number' onChange={(e) => setReps(e.target.value)} value={reps} /></div>
         <button>Submit</button>
-        <div className='status'>
+        <div>
           {error && <i>{error}</i>}
           {success && <i>{success}</i>}
         </div>
