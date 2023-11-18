@@ -29,9 +29,13 @@ const List = () => {
   }, [dispatch, user])
   return (
     <ListWrapper>
-      <h1>Blogs</h1>
       <BlogForm />
-      <BlogGrid blogs={blogs} />
+      {blogs.length && (
+        <>
+          <h1>Blogs</h1>
+          <BlogGrid blogs={blogs} />
+        </>
+      )}
     </ListWrapper>
   )
 }

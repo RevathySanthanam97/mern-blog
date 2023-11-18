@@ -8,6 +8,8 @@ import {
 } from "firebase/storage";
 import { firebaseStorage } from '../firebase';
 import { v4 as uuid } from 'uuid';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 export const BlogForm = () => {
   const { user } = useAuthContext();
@@ -61,9 +63,10 @@ export const BlogForm = () => {
         getDownloadURL(snapshot.ref)
         .then((url) => {
           setImageUrl(url);
-          setImageUploadStatus('Image Uploaded Successfully');
+          setImageUploadStatus(true);
         })
         .catch((error) => {
+          setImageUploadStatus(true);
           console.log(error.message);
           setImageUploadStatus(`Couldn't Upload Image, ${error.message}`);
         });
@@ -75,7 +78,10 @@ export const BlogForm = () => {
 
   const handleImageUpload = (e) => {
     setImage(e.target.files[0]);
-    upload(e.target.files[0]);
+    if (e.target.files[0] !== null) {
+      upload(e.target.files[0]);
+      setImageUploadStatus(true);
+    }
   }
 
   return (
@@ -83,11 +89,10 @@ export const BlogForm = () => {
       <form>
         <div><input placeholder="title" type='text' onChange={(e) => setTitle(e.target.value)} value={title} /></div>
         <div><input placeholder="tags" type='text' onChange={(e) => setTags(e.target.value)} value={tags} /></div>
-        <div><input placeholder="content" type='text' onChange={(e) => setContent(e.target.value)} value={content} /></div>
+        <ReactQuill theme="snow" value={content} onChange={setContent} />
         <div><input type="file" id="blog-image" name="blog-image" accept="image/png, image/jpeg"  onChange={(e) => handleImageUpload(e)} /></div>
         <img src={image && URL.createObjectURL(image)} alt='Preview-Blog' />
-        {imageUploadStatus && <i>{imageUploadStatus}</i>}
-        <button>Submit</button>
+        <button disabled={imageUploadStatus}>Submit</button>
         <div>
           {error && <i>{error}</i>}
           {success && <i>{success}</i>}
