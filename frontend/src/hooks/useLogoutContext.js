@@ -1,9 +1,9 @@
 import { useAuthContext } from "./useAuthContext"
-import { useWorkoutContext } from "./useWorkoutContext"
+import { useBlogContext } from "./useBlogContext"
 
 export const useLogoutContext = () => {
   const { dispatch } = useAuthContext();
-  const { dispatch: workoutsDispatch } = useWorkoutContext();
+  const { dispatch: blogsDispatch } = useBlogContext();
   
   const logout = () => {
     // REMOVE LOCAL STORAGE
@@ -11,7 +11,7 @@ export const useLogoutContext = () => {
   
     // DISPATCH LOGOUT ACTION
     dispatch({type: 'LOGOUT'})
-    workoutsDispatch({type: 'SET_WORKOUTS', payload: null})
+    blogsDispatch({type: 'SET_BLOGS', payload: null})
   }
 
   return { logout };

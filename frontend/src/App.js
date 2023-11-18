@@ -9,10 +9,11 @@ import { useAuthContext } from './hooks/useAuthContext';
 function App() {
   const { user } = useAuthContext();
   return (
-    <div className="App">
+    <>
+    <div className="app">
       <BrowserRouter>
         <Navbar />
-        <div className='pages'>
+        <div className='app__main'>
           <Routes>
             <Route
               path='/'
@@ -20,7 +21,8 @@ function App() {
             />
             <Route
               path='/list'
-              element={user ? <List /> : <Navigate to="/login" />}
+              // element={user ? <List /> : <Navigate to="/login" />}
+              element={user ? <List /> : <List />}
             />
             <Route
               path='/login'
@@ -34,6 +36,7 @@ function App() {
         </div>
       </BrowserRouter>
     </div>
+    </>
   );
 }
 

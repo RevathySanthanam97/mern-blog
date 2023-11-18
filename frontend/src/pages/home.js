@@ -1,37 +1,33 @@
-import React, { useEffect } from 'react'
-import { WorkoutGrid } from '../components/workoutGrid';
-import { WorkoutForm } from '../components/workoutForm';
+import React from 'react'
 import styled from '@emotion/styled'
-import { useWorkoutContext } from '../hooks/useWorkoutContext';
-import { useAuthContext } from '../hooks/useAuthContext';
 
 const HomeWrapper = styled.div`
+  background-color: var(--color-hero-bg);
+  padding: 120px 0;
+  .inner-container {
+    display: flex;
+    .home__left {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
 `;
 
 const Home = () => {
-  const {workouts, dispatch} = useWorkoutContext();
-  const { user } = useAuthContext();
-  useEffect(() => {
-    const fetchWorkouts = async () => {
-      const response = await fetch('/api/workouts', {
-        headers: {
-          'Authorization': `Bearer ${user.token}`
-        }
-      });
-      const json = await response.json();
-      if (response.ok) {
-        dispatch({ type: 'SET_WORKOUTS', payload: json});
-      }
-    }
-    if (user) {
-      fetchWorkouts()
-    }
-  }, [dispatch, user])
   return (
-    <HomeWrapper>
-      <h1>Workout</h1>
-      <WorkoutGrid workouts={workouts} />
-      <WorkoutForm />
+    <HomeWrapper className='home'>
+      <div className='inner-container'>
+        <div className='home__left'>
+          <small>Blogs subtitle space</small>
+          <h1>h1 Space</h1>
+          <p>Paragraph</p>
+          <button className='secondary'>Read More</button>
+        </div>
+        <div className='home__right'>
+          <img src='https://lh3.googleusercontent.com/pw/ADCreHc_Rx7enGWCOmdsO5BxhbmGEgdSmsIbXZsJwgc12jz-rPJvRybT5iGpkVv88cGoPWqxLXY7hWJ2sWsHWZ0fq5ZTWQ7G45H-WVeF7hEUbLgwXYzZUES1FM_rowe3qGvbIao2bCZkxYbFEHfLe7yBRfYl9Q=w663-h884-s-no-gm' alt='Hero' />
+        </div>
+      </div>
     </HomeWrapper>
   )
 }

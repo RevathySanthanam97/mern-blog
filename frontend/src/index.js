@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import { WorkoutsContextProvider } from './context/workoutContext';
+import { BlogsContextProvider } from './context/blogContext';
 import { UserContextProvider } from './context/authContext';
+import { GlobalStyle } from './globalStyle';
+import { Global } from '@emotion/react'
+import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <UserContextProvider>
-      <WorkoutsContextProvider>
+      <BlogsContextProvider>
+        <Global styles={GlobalStyle} />
         <App />
-      </WorkoutsContextProvider>
+      </BlogsContextProvider>
     </UserContextProvider>
   </React.StrictMode>
 );

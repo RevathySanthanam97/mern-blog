@@ -1,21 +1,34 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  max-width: 1000px;
-  padding: 40px;
-  margin: auto;
+@font-face {
+  font-family: Roboto-Light;
+  src: url('./media/fonts/Roboto-Light.ttf') format('opentype'); 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: Roboto-Medium;
+  src: url('./media/fonts/Roboto-Medium.ttf') format('opentype'); 
 }
 
-* {
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-family: Roboto-Regular;
+  src: url('./media/fonts/Roboto-Regular.ttf') format('opentype'); 
+}
+
+@font-face {
+  font-family: Gothic-Regular;
+  src: url('./media/fonts/DidactGothic-Regular.ttf') format('opentype'); 
+}
+
+@font-face {
+  font-family: OpenSans-Light;
+  src: url('./media/fonts/OpenSans_Condensed-Light.ttf') format('opentype'); 
+}
+
+@font-face {
+  font-family: OpenSans-Medium;
+  src: url('./media/fonts/OpenSans_Condensed-Medium.ttf') format('opentype'); 
+}
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url('./media/fonts/OpenSans_Condensed-Regular.ttf') format('opentype'); 
 }
