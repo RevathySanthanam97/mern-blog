@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { BlogGrid } from '../components/blogGrid';
-import { BlogForm } from '../components/blogForm';
 import styled from '@emotion/styled'
 import { useBlogContext } from '../hooks/useBlogContext';
 import { useAuthContext } from '../hooks/useAuthContext';
@@ -29,8 +28,7 @@ const List = () => {
   }, [dispatch, user])
   return (
     <ListWrapper>
-      <BlogForm />
-      {blogs.length && (
+      {blogs?.length && (
         <>
           <h1>Blogs</h1>
           <BlogGrid blogs={blogs} />

@@ -2,22 +2,27 @@ import { css } from '@emotion/react'
 
 export const GlobalStyle = css`  
   :root {
-    /* colors  */
-    --color-hero-bg: #f7f3f0;
-    --color-link: #868380;
-    --color-link-active: #4b4744;
-    --color-subtitle: #5b5754;
-    --color-title: #353535;
-    --color-text: #7b7774;
-    --color-btn: #373330;
-    --color-btn-border: #d19163;
-    --color-filled-btn: #ffffff;
-    --color-btn-hover: #f5f1ee;
-
-    /* fonts  */
+    --color-theme: #B8E8D1;
+    --color-gray-1: #333;
+    --color-gray-2: #4F4F4F;
+    --color-gray-4: #BDBDBD;
+    --color-gray-6: #F2F2F2;
+    --color-white: #fff;
+    
+    /* Fonts  */
     --font-primary: Roboto-Regular;
-    --font-nav: Gothic-Regular;
-    --font-small: OpenSans-Medium;
+  
+    /* Nav Bar */
+    --maxwidth-navbar: 1380px;
+    --maxwidth-container: 1240px;
+  }
+
+  body {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
   * {
@@ -25,47 +30,64 @@ export const GlobalStyle = css`
     padding: 0;
   }
 
-  .app__main {
-    font-family: var(--font-primary);
-  }
+  // Global Element Styles
+  a {
+    &.plain {
+      text-decoration: none;
+      color: inherit;
 
-  .inner-container {
-    max-width: 1200px;
-    margin: auto;
-  }
+      &.hover-underline {
+        position: relative;
+        padding-bottom: 5px;
+        &::before {
+          position: absolute;
+          content: '';
+          width: 0;
+          bottom: 0;
+          border-bottom: 3px solid var(--color-theme);
+          transition: 0.2s ease;
+        }
+        &:hover::before {
+          width: 70%;
+        }
+      }
 
-  /* text formatting  */
-  small {
-    font-family: var(--font-small);
-    letter-spacing: 0.5px;
-  }
-
-  /* button style */
-  button {
-    padding: 8px 16px;
-    border-radius: 24px;
-    background-color: transparent;
-    border: 1px solid var(--color-btn-border);
-    color: var(--color-btn-border);
-    cursor: pointer;
-    transition: 0.2s ease;
-    :hover {
-      background-color: var(--color-btn-border);
-      color: var(--color-btn-hover);
-    }
-
-    &.filled {
-      background-color: var(--color-btn-border);
-      color: var(--color-btn-hover);
-      &:hover {
-        background-color: transparent;
-        color: var(--color-btn-border);
+      &.plain-hover-color:hover {
+        color: var(--color-theme);
       }
     }
-    &.secondary {
-      border-radius: 12px;
-      padding: 10px 15px;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .title {
+    font-size: 24px;
+    line-height: normal;
+    font-family: Roboto-Light;
+    font-weight: 300;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .desktop-show {
+    display: none!important;
+    @media screen and (min-width: 1024px) {
+      display: inherit!important;
+    }
+  }
+  .desktop-hide {
+    display: block!important;
+    @media screen and (min-width: 1024px) {
+      display: none!important;
     }
   }
 `;
 
+/* Preferred Width
+ipad: 768;
+desktop: 1024;
+*/

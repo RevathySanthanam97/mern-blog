@@ -3,8 +3,9 @@ import Home from './pages/home';
 import { Navbar } from './components/navbar';
 import Login from './pages/login';
 import Signup from './pages/signup';
-import List from './pages/list';
+import List from './pages/blog-list';
 import { useAuthContext } from './hooks/useAuthContext';
+import CreateBlog from './pages/create-blog';
 
 function App() {
   const { user } = useAuthContext();
@@ -13,16 +14,19 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Navbar />
-        <div className='app__main'>
+        {/* <div className='app__main'>
           <Routes>
             <Route
               path='/'
               element={user ? <Home /> : <Navigate to="/login" />}
             />
+             <Route
+              path='/create-blog'
+              element={user ? <CreateBlog /> : <Navigate to="/login" />}
+            />
             <Route
-              path='/list'
-              // element={user ? <List /> : <Navigate to="/login" />}
-              element={user ? <List /> : <List />}
+              path='/blog-list'
+              element={user ? <List /> : <Navigate to="/login" />}
             />
             <Route
               path='/login'
@@ -33,7 +37,7 @@ function App() {
               element={!user ? <Signup /> : <Navigate to="/" />}
             />
           </Routes>
-        </div>
+        </div> */}
       </BrowserRouter>
     </div>
     </>
