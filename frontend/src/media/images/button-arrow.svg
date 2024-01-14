@@ -1,0 +1,36 @@
+<svg width="148" height="8" viewBox="0 0 148 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="148" height="8" fill="#E5E5E5"/>
+<g id="Home" clip-path="url(#clip0_0_1)">
+<rect width="1440" height="8771" transform="translate(-159 -1632)" fill="white"/>
+<g id="Frame 1" clip-path="url(#clip1_0_1)">
+<rect id="Rectangle 8" x="-159" y="-732" width="1440" height="900" fill="white"/>
+</g>
+<g id="Group 154">
+<g id="Group 8">
+<g id="Group 7">
+<path id="Arrow 1" d="M147.354 4.35355C147.549 4.15829 147.549 3.84171 147.354 3.64645L144.172 0.464466C143.976 0.269204 143.66 0.269204 143.464 0.464466C143.269 0.659728 143.269 0.976311 143.464 1.17157L146.293 4L143.464 6.82843C143.269 7.02369 143.269 7.34027 143.464 7.53553C143.66 7.7308 143.976 7.7308 144.172 7.53553L147.354 4.35355ZM0 4.5H147V3.5H0V4.5Z" fill="#32463D"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(285.396 -282.001) rotate(90) scale(449.689 449.844)">
+<stop stop-color="#F4F4F4"/>
+<stop offset="1" stop-color="#EFEFEF" stop-opacity="0.3"/>
+</radialGradient>
+<radialGradient id="paint1_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(8.80751 7.85471) rotate(90) scale(51.509 44.9535)">
+<stop stop-color="#F4F4F4"/>
+<stop offset="1" stop-color="#EFEFEF" stop-opacity="0.3"/>
+</radialGradient>
+<radialGradient id="paint2_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(71.5555 8.13156) rotate(90) scale(15.1355 31.5295)">
+<stop stop-color="#F4F4F4"/>
+<stop offset="1" stop-color="#EFEFEF" stop-opacity="0.3"/>
+</radialGradient>
+<clipPath id="clip0_0_1">
+<rect width="1440" height="8771" fill="white" transform="translate(-159 -1632)"/>
+</clipPath>
+<clipPath id="clip1_0_1">
+<rect width="1440" height="900" fill="white" transform="translate(-159 -732)"/>
+</clipPath>
+</defs>
+</svg>
